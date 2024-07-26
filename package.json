@@ -1,0 +1,12 @@
+{
+  "name": "steam-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:client": "npm --prefix ./client run dev",
+    "dev:server": "npm --prefix ./server run dev"
+  },
+  "author": "Fariz Rifky Berliano",
+  "license": "ISC"
+}
