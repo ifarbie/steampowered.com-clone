@@ -1,0 +1,248 @@
+#wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#cardWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#headerBg {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+#gameName a button:hover,
+.genreTag span:hover {
+  background: linear-gradient(
+    to right,
+    rgb(169, 245, 255) 50%,
+    rgb(192, 250, 255) 100%
+  );
+}
+
+.prodFeat,
+.prodLang,
+.shareEmbedRow,
+.prodGenre,
+.pointShop,
+.gameAchievement,
+#recommendationReasons {
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.612) 2%,
+    rgba(13, 9, 62, 0.179) 100%
+  );
+}
+
+.sysReqTabs {
+  background: linear-gradient(
+    to right,
+    rgba(58, 110, 139, 0.2) 0%,
+    rgba(58, 110, 139, 0) 100%
+  );
+}
+
+td {
+  border-bottom: 1px solid #556772;
+}
+
+td:nth-child(2) {
+  color: #67c1f5;
+  text-align: center;
+}
+
+td:nth-child(3) {
+  color: #67e9f5;
+  text-align: center;
+}
+
+#block {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.612) 2%,
+    rgba(13, 9, 62, 0.179) 100%
+  );
+}
+
+.gameAwards {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.612) 2%,
+    rgba(13, 9, 62, 0.179) 100%
+  );
+}
+
+.gameAwardsBannerBG {
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(72, 70, 58, 0.5);
+  padding: 20px;
+  margin-bottom: 20px;
+  display: block;
+  text-transform: uppercase;
+  background: url(https://cdn.cloudflare.steamstatic.com/store/promo/steamawards2020/StoreBanner-plain2020.jpg)
+    no-repeat;
+  background-size: cover;
+}
+
+.gameAwardsBannerEvent {
+  font-size: 0.8rem;
+  display: flex;
+  font-weight: 900;
+}
+
+.gameAwardsBannerYear {
+  color: #f5db7e;
+}
+
+.gameAwardsBannerWinner {
+  font-weight: 600;
+  padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+  background-color: #67501e;
+  line-height: 4rem;
+}
+
+.gameAwardsBannerContents {
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.gameAwardsBannerRight {
+  width: 7rem;
+  margin-top: 2.5rem;
+  margin-left: 0.2rem;
+  height: 100%;
+}
+
+.gameAwardsBannerDesc span {
+  color: #f5db7e;
+}
+
+.card {
+  background: linear-gradient(
+    -60deg,
+    rgba(226, 244, 255, 0.3) 5%,
+    rgba(84, 107, 115, 0.3) 95%
+  );
+}
+
+.bundleInfo {
+  background: linear-gradient(to right, #47bfff 5%, #1a44c2 60%);
+}
+
+.disclaimer {
+  background: linear-gradient(
+    -60deg,
+    rgba(226, 244, 255, 0.2) 0%,
+    rgba(97, 100, 101, 0.2) 100%
+  );
+}
+
+.contentHeader,
+.eventHeader {
+  border-bottom: 1px solid #8f98a0;
+}
+
+.browseButton {
+  border: 1px solid #8f98a0;
+}
+
+.content {
+  background: linear-gradient(
+    135deg,
+    rgba(97, 100, 101, 0.3) 0%,
+    rgba(226, 244, 255, 0.3) 100%
+  );
+}
+
+.moreButton p {
+  border: 1px solid #8f98a0;
+}
+
+.gameDesc ul {
+  list-style-type: square;
+}
+
+@media (max-width: 1024px) {
+  #container {
+    padding: 1rem;
+  }
+
+  #headerBg {
+    display: inline-block;
+  }
+
+  #sideDesc {
+    margin: 0;
+  }
+}
+
+@media (min-width: 426px) {
+  .mobileH1 {
+    display: none;
+  }
+}
+
+@media (max-width: 321px) {
+  #container {
+    padding: 1rem;
+  }
+
+  #wrapper,
+  #headerBg {
+    display: inline-block;
+  }
+
+  #sideDesc {
+    margin: 0;
+  }
+
+  #gameName a button {
+    display: none;
+  }
+
+  .bundleInfo {
+    display: none;
+  }
+}
+
+@media (max-width: 426px) {
+  #container {
+    padding: 1rem;
+  }
+
+  #wrapper,
+  #headerBg {
+    display: inline-block;
+  }
+
+  #sideDesc {
+    margin: 0;
+  }
+
+  #gameName a button {
+    display: none;
+  }
+
+  #gameName h1 {
+    display: none;
+  }
+
+  #directory {
+    display: none;
+  }
+}
+
+.border-white {
+  border: 2px solid white;
+}

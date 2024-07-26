@@ -1,0 +1,88 @@
+.gradient-recommended {
+    background: linear-gradient(180deg, #0A141D 0%, rgba(10, 20, 29, 0.2) 100%)
+}
+
+.gradient-navbar-search {
+    background: linear-gradient(90deg, rgba(62, 103, 150, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%);
+}
+.link-navbar-search:hover {
+    background: linear-gradient(90deg, rgba(33, 162, 255, 0.25) 0%, rgba(33, 162, 255, 0.15) 50%, rgba(50, 50, 51, 0) 100%);
+}
+
+.gradient-red {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgb(139, 0, 0) 100%);
+}
+.gradient-blue {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 139) 100%);
+}
+.gradient-yellow {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgb(184, 134, 11) 100%);
+}
+.gradient-green {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 100, 0) 100%);
+}
+.gradient-cyan {
+    background: linear-gradient(rgba(0,0,0,0), rgb(0,139,139) 100%);
+}
+.gradient-purple {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgb(139, 0, 139) 100%);
+}
+.gradient-yellow:hover, .gradient-blue:hover, .gradient-red:hover, .gradient-green:hover, .gradient-cyan:hover, .gradient-purple:hover {
+    filter: brightness(1.25);
+}
+
+.carousel-thumb {
+    background-color: hsla(202, 60%, 100%, 0.3);
+}
+.carousel-thumb:hover {
+    background-color: #63676f;
+}
+.carousel-thumb.focus {
+    background-color: hsla(202, 60%, 100%, 0.4);
+}
+
+.sign-in-btn {
+    background: linear-gradient(to bottom, #a4d007 5%, #536904 95%);
+}
+.sign-in-btn > span {
+    background: linear-gradient(to bottom, #799905 5%, #536904 95%);
+}
+.sign-in-btn:hover,
+.sign-in-btn:hover > span {
+    background: linear-gradient(to bottom, #b6d908 5%, #80a006 95%);
+}
+
+.gradient-browse-btn {
+    background: linear-gradient(90deg, #06bfff 0%, #2d73ff 100%);
+}
+.gradient-browse-btn:hover {
+    background: linear-gradient(90deg, #06bfff 30%, #2d73ff 100%);
+}
+
+.gradient-game-cards {
+    background: linear-gradient(-45deg, rgba(64, 121, 153, 1) 5%, rgba(42, 62, 89, 1) 95%);
+}
+.gradient-game-cards:hover {
+    background: linear-gradient(to right, rgba(56, 107, 135, 1) 5%, rgba(68, 130, 163, 1) 95%);
+}
+
+.gradient-deals {
+    background: linear-gradient(to bottom, #ffffff 5%, #abdaf4 95%);
+}
+
+.gradient-arrow-left {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 5%, rgba(0, 0, 0, 0) 95%);
+}
+.gradient-arrow-left:hover {
+    background: linear-gradient(to right, rgba(171, 218, 244, 0.3) 5%, rgba(171, 218, 244, 0) 95%);
+}
+.gradient-arrow-right {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.3) 95%);
+}
+.gradient-arrow-right:hover {
+    background: linear-gradient(to right, rgba(171, 218, 244, 0) 5%, rgba(171, 218, 244, 0.3) 95%);
+}
+
+.special-offers__today-deal {
+    background: linear-gradient(to bottom, #ffffff 5%, #abdaf4 95%)
+}

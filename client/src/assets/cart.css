@@ -1,0 +1,399 @@
+.nav_1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  height: 40px;
+  margin: 0 20%;
+}
+
+.nav_1 > button {
+  width: 110px;
+  height: 25px;
+  color: #fff;
+  padding: 0 3px;
+  margin: 1px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 2px;
+  border: 0;
+}
+
+.w_btn {
+  background-color: #54a5d4;
+}
+
+.c_btn {
+  background-color: #5c7e10;
+}
+
+.nav_2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20%;
+  height: 40px;
+  background-color: #54a5d4;
+}
+
+.nav_items {
+  display: flex;
+  flex: 1;
+}
+
+.nav_items > li {
+  list-style: none;
+  padding: 0 15px;
+}
+
+.nav_items > li > a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.search_data {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  font-size: 14px;
+  background: none;
+  border-radius: 2px;
+}
+
+.content_cart {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+/* Content */
+.container_content {
+  max-width: 940px;
+  min-height: 50vh;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+
+.breadcrumb_container {
+  margin-top: 25px;
+  font-size: 12px;
+}
+
+.breadcrumb_container > a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.span_breadcrumb {
+  color: #56707f;
+}
+
+.container_title {
+  font-weight: 800;
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.content_card {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.left_col {
+  max-width: 615px;
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.game_card_container {
+  position: relative;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.game_card {
+  display: flex;
+  gap: 15px;
+}
+
+.img_games > img {
+  width: 200px;
+  height: 94px;
+  flex-shrink: 0;
+}
+
+.detail_games {
+  flex-grow: 1;
+}
+
+.games_details {
+  margin-top: 0;
+}
+
+.titles {
+  margin-top: 0;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.row_notes {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  gap: 3rem;
+}
+
+.notes {
+  color: #ffcc6a;
+  font-size: 13px;
+}
+
+.row_icon {
+  justify-content: space-between;
+}
+
+.icon_container {
+  display: flex;
+}
+
+.icon {
+  height: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.windows_icon > i {
+  width: 19px;
+  height: 19px;
+  font-size: 19px;
+  fill: #7c8289;
+  color: #7c8289;
+}
+
+.apple_icon > i {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  fill: #7c8289;
+  color: #7c8289;
+}
+
+.price_container {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.games_price {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: transparent;
+  background: transparent;
+  padding-right: 0px;
+}
+
+.price {
+  font-size: 14px;
+  padding: 5px;
+  align-items: center;
+  display: flex;
+  color: #c6d4df;
+}
+
+.layout_dd {
+  justify-content: space-between;
+}
+
+.dropdown_container {
+  display: flex;
+}
+
+.dropdown_layout {
+  margin: 0;
+  background: #3b3f4880;
+}
+
+.dd_dialog_box.dd_dialog_input {
+  margin-bottom: 0;
+  user-select: none;
+}
+
+.dd_dialog_box.arrow_dd {
+  width: 14px;
+  top: 9px;
+  right: 4px;
+  position: absolute;
+}
+
+.dd_dialog_box {
+  cursor: pointer;
+  position: relative;
+}
+
+.dd_dialog_input {
+  line-height: 18px;
+}
+
+.SVGIcon_Button {
+  fill: #189cff;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+  max-width: 320px;
+  max-height: 320px;
+}
+
+.right_col {
+  flex-shrink: 0;
+}
+
+.payment_card_container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.25);
+  max-width: 280px;
+  position: sticky;
+  top: 10px;
+}
+
+.dropdown.arrow_dd {
+  width: 14px;
+  top: 9px;
+  right: 4px;
+}
+
+#option_gift {
+  background: #3b3f4880;
+  border: 0;
+  padding: 7px;
+  min-width: 100px;
+  color: #dfe3e6;
+}
+
+#country_value {
+  background: #3b3f4880;
+  border: 0;
+  padding: 6px;
+  min-width: 100px;
+  color: #dfe3e6;
+}
+
+.crud_btn {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+
+.btn_add_rem {
+  color: #606f7f;
+  font-size: 12px;
+}
+
+.add_btn,
+.remove_btn {
+  color: #606f7f;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.interaction_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button_container {
+  padding: 0px 12px;
+  margin: 2px 0px;
+  font-size: 14px;
+  color: #dfe3e6;
+  background: #3d4550;
+  border: none;
+  line-height: 32px;
+  border-radius: 2px;
+}
+
+.remove_container_btn {
+  color: #606f7f;
+  text-decoration: underline;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+.contry_label {
+  color: #fff;
+  font-size: 13px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mb-6 {
+  margin-bottom: 6px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.country_option_container {
+  font-weight: 700;
+  color: #fff;
+  font-size: 15px;
+}
+
+.estimatetotal {
+  color: #fff;
+  font-size: 13px;
+}
+
+.totalestimateprice {
+  font-weight: 700;
+  color: #fff;
+  font-size: 15px;
+}
+
+.notePayment {
+  color: #ccd5e0;
+  font-size: 12px;
+}
+
+.payment_btn {
+  margin: 2px 0px 10px;
+  font-size: 14px;
+  color: #dfe3e6;
+  background: linear-gradient(to right, #47bfff 0%, #1a44c2 60%);
+  border: none;
+  border-radius: 2px;
+  line-height: 32px;
+  background-position: 25%;
+  background-size: 330% 100%;
+}
+
+.empty_cart_message {
+  color: white;
+  text-align: center;
+  padding: 0px;
+  font-size: 0.8em;
+}
