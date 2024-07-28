@@ -16,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
       products.hasOne(models.SysReqs);
       products.hasMany(models.PriceList);
       products.hasMany(models.Review);
-      products.hasMany(models.descImg)
     }
   }
   products.init(

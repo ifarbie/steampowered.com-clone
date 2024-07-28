@@ -34,9 +34,7 @@ const getCategoryDetailWhere = async (columnObject) => {
 };
 
 const getAllCategories = async () => {
-  return await Category.findAll({
-    attributes: ["id", "name"],
-  });
+  return await Category.findAll();
 };
 
 module.exports = { getCategoryDetailWhere, getAllCategories };

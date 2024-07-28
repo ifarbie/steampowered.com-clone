@@ -49,7 +49,7 @@ module.exports = {
           offerName: "Premium Edition",
           price: "699000",
           discount: 0,
-          productId: 3,
+          productId: 4,
         },
         {
           offerName: "",
@@ -66,13 +66,13 @@ module.exports = {
         {
           offerName: "",
           price: "59000",
-          discount: 0,
+          discount: 49,
           productId: 6,
         },
         {
           offerName: "",
           price: "79000",
-          discount: 0,
+          discount: 39,
           productId: 7,
         },
         {
@@ -90,7 +90,7 @@ module.exports = {
         {
           offerName: "",
           price: "49000",
-          discount: 0,
+          discount: 80,
           productId: 10,
         },
         {
@@ -102,7 +102,7 @@ module.exports = {
         {
           offerName: "",
           price: "99000",
-          discount: 0,
+          discount: 95,
           productId: 12,
         },
         {
@@ -120,7 +120,7 @@ module.exports = {
         {
           offerName: "",
           price: "689000",
-          discount: 0,
+          discount: 50,
           productId: 15,
         },
         {
@@ -138,7 +138,7 @@ module.exports = {
         {
           offerName: "",
           price: "229000",
-          discount: 0,
+          discount: 25,
           productId: 18,
         },
         {

@@ -12,7 +12,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-    Example: await queryInterface.bulkInsert(
+    await queryInterface.bulkInsert(
       "ScrollThumbnails",
       [
         // god of war

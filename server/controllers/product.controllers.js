@@ -7,10 +7,9 @@ const {
   CategorySysReq,
   Review,
   ScrollThumbnail,
-  descImg,
 } = require("../models");
 
-const getProductDetail = async (req, res, next) => {
+const getProductDetail = async (req, res) => {
   try {
     const productData = req.params.id;
     const data = await products.findOne({
@@ -72,9 +71,6 @@ const getProductDetail = async (req, res, next) => {
           model: ScrollThumbnail,
           attributes: ["id", "productId", "img", "type"],
         },
-        {
-          model: descImg,
-        },
       ],
     });
     if (!data) {
@@ -96,7 +92,7 @@ const getProductDetail = async (req, res, next) => {
   }
 };
 
-const getAllProduct = async (req, res, next) => {
+const getAllProduct = async (req, res) => {
   const data = await products.findAll({
     include: [
       {
@@ -143,9 +139,6 @@ const getAllProduct = async (req, res, next) => {
       {
         model: ScrollThumbnail,
         attributes: ["id", "productId", "img", "type"],
-      },
-      {
-        model: descImg,
       },
     ],
   });
