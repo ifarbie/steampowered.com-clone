@@ -17,7 +17,7 @@ const getUserDetailWhere = async (columnObject) => {
           attributes: []
         },
         as: "productOwned",
-        attributes: ["name", "product_thumbnail"],
+        attributes: ["name", "product_thumbnail", "id"],
       },
       {
         model: Carts,

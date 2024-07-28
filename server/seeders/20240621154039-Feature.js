@@ -2,7 +2,7 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up(queryInterface) {
     /**
      * Add seed commands here.
      *
@@ -17,18 +17,18 @@ module.exports = {
       [
         {
           name: "Single Player",
-          icon: "singleplayer.png",
+          icon: "https://store.akamai.steamstatic.com/public/images/v6/ico/ico_singlePlayer.png",
         },
         {
-          name: "Multi Player",
-          icon: "multiplayer.png",
+          name: "Online Co-Op",
+          icon: "https://store.akamai.steamstatic.com/public/images/v6/ico/ico_coop.png",
         },
       ],
       {}
     );
   },
 
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     /**
      * Add commands to revert seed here.
      *

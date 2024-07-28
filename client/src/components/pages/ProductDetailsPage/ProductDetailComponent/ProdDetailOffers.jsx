@@ -1,81 +1,55 @@
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { addToCart } from "../../../../API/cart";
+/* eslint-disable react/prop-types */
+import { useSelector } from 'react-redux';
+import { addToCart } from '../../../../API/cart';
+import { discountedPrice, formatPrice } from '../../../../utils/functions';
 
-const formatPrice = (price) => {
-  return `Rp ${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}`;
-};
-
-const ProdDetailOffers = (props) => {
-  const [addToCartMessage, setAddToCartMessage] = useState("");
+const ProdDetailOffers = ({ product }) => {
   const isLogin = useSelector((state) => state.auth.isLogin);
+  const user = useSelector((state) => state.auth.user);
+  const productOwned = user?.productOwned;
+  const isOwned = productOwned?.find(owned => owned.id === product?.id );
 
-  const reloadPage = () => {
-    window.location.reload();
-  };
+  const PriceList = product?.PriceLists;
+  // console.log(product);
+  // console.log(productOwned)
 
   const handleAddToCart = async (offerIndex, productName, offerName) => {
     try {
       if (!isLogin) {
-        window.location.href = "/login";
+        window.location.href = '/login';
         return;
       }
 
       const response = await addToCart(offerIndex);
       console.log(response);
-      setAddToCartMessage(`Added to cart! ${productName} ${offerName}`);
       alert(`Added to cart! ${productName} ${offerName}`);
-      reloadPage();
+      window.location.reload();
     } catch (error) {
-      const errorMessage =
-        error.response?.data?.message || "Failed to add item to cart.";
-      console.error("Error adding to cart:", errorMessage);
-      setAddToCartMessage(errorMessage);
+      const errorMessage = error.response?.data?.message || 'Failed to add item to cart.';
+      console.error('Error adding to cart:', errorMessage);
       alert(errorMessage);
     }
   };
 
-  const product = props.product;
-  const PriceList = product?.PriceLists;
-
-  const discount = (discountValue, normalPrice) => {
-    return (discountValue / 100) * normalPrice;
-  };
-
   const offersElements = PriceList?.map((offer, index) => (
-    <div className="card p-4 mt-6 mb-2 rounded relative w-full" key={index}>
-      <p className="text-2xl font-semibold">
+    <div className='card p-4 mt-6 mb-2 rounded relative w-full' key={index}>
+      <p className='text-2xl font-semibold'>
         Buy {product?.name} {offer?.offerName}
       </p>
-      <div className="text-base text-right absolute right-1">
-        <div className="pl-3 pr-0 bg-black rounded text-sm">
+      <div className='text-base text-right absolute right-1'>
+        <div className='pl-3 pr-0 bg-black rounded text-sm'>
           <span>
             {offer?.discount > 0 ? (
               <>
-                <span className="bg-lime-300 p-2 text-lg text-green-500">
-                  {offer?.discount} %{" "}
-                </span>
-                <span className="line-through ">
-                  {formatPrice(offer?.price)}{" "}
-                </span>
-                <span className="text-discount">
-                  {" "}
-                  {formatPrice(
-                    offer?.price -
-                      discount(offer?.discount, parseInt(offer?.price))
-                  )}{" "}
-                </span>
+                <span className='bg-lime-300 p-2 text-lg text-green-500'>{offer?.discount} % </span>
+                <span className='line-through '>{formatPrice(offer?.price)} </span>
+                <span className='text-discount'> {formatPrice(discountedPrice(offer?.discount, offer?.price))} </span>
               </>
             ) : (
               <span>{formatPrice(offer?.price)}</span>
             )}
-            <button
-              className="m-1 bg-buyBg py-2 px-4 rounded"
-              onClick={() =>
-                handleAddToCart(offer.id, product.name, offer.offerName)
-              }
-            >
-              Add to Cart
+            <button className='m-1 bg-buyBg py-2 px-4 rounded' onClick={() => handleAddToCart(offer.id, product.name, offer.offerName)} disabled={isOwned}>
+              {isOwned ? "Already Owned" : "Add to Cart"}
             </button>
           </span>
         </div>
@@ -83,12 +57,7 @@ const ProdDetailOffers = (props) => {
     </div>
   ));
 
-  return (
-    <>
-      {addToCartMessage && <p>{addToCartMessage}</p>}
-      {offersElements}
-    </>
-  );
+  return <>{offersElements}</>;
 };
 
 export default ProdDetailOffers;

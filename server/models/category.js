@@ -24,6 +24,14 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.STRING(20),
       },
+      image: {
+        allowNull: false,
+        type: DataTypes.TEXT
+      },
+      color: {
+        allowNull: false,
+        type: DataTypes.STRING(30)
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,
