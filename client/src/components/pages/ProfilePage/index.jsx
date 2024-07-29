@@ -8,14 +8,12 @@ import useNeedLogin from "../../../hooks/useNeedLogin";
 
 const ProfilePage = () => {
   const user = useSelector((state) => state.auth.user);
-  const isLoading = useSelector((state) => state.auth.isLoading);
   
   useNeedLogin();
   usePageTitle(`Profile || ${user?.username ?? ""}`, [user]);
 
   return (
     <>
-      {!isLoading ? (
         <div className="bg-black">
           <Header />
           <div className="bg-[url('https://community.akamai.steamstatic.com/public/images/profile/2020/bg_dots.png')] bg-no-repeat bg-top">
@@ -28,7 +26,6 @@ const ProfilePage = () => {
             <Footer />
           </div>
         </div>
-      ) : null}
     </>
   );
 };

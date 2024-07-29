@@ -33,10 +33,11 @@ const ProdDetailHeader = ({ product }) => {
     <>
       {/* product detail directory */}
       <div id='directory' className='text-fontColor text-sm'>
-        <p>
+        <p className='lowercase'>
           {product?.Categories?.map((category, index) => {
             return <span key={index}>{category.name} &gt; </span>;
           })}
+          {product?.name}
         </p>
       </div>
       {/* game title */}

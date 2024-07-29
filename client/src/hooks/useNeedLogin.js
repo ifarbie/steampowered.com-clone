@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
-import { fetchUserData } from "../redux/slices/authSlice";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUserData } from '../redux/slices/authSlice';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const useNeedLogin = async () => {
+  const isLogin = useSelector((state) => state.auth.isLogin);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -11,12 +12,14 @@ const useNeedLogin = async () => {
     try {
       await dispatch(fetchUserData()).unwrap();
     } catch (error) {
-      navigate("/login");
+      navigate('/login');
     }
   };
 
   useEffect(() => {
-    fetchUser();
+    if(!isLogin) {
+      fetchUser();
+    }
   }, []);
 };
 

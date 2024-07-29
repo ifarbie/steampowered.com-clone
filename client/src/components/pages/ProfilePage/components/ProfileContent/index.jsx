@@ -12,7 +12,7 @@ const ProfileContent = ({ user }) => {
         {user?.productOwned.length ? (
           <>
             {user.productOwned.map((product) => (
-              <ProductOwnedCard key={product.name} gameName={product.name} gameImg={product.product_thumbnail}/>
+              <ProductOwnedCard key={product.name} gameName={product.name} gameImg={product.product_thumbnail} gameId={product.id}/>
             ))}
           </>
         ) : (
