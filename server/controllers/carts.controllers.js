@@ -1,28 +1,14 @@
-const { Carts, Users, PriceList, products, BridgeProductOwned } = require('../models');
+const { Carts, BridgeProductOwned } = require('../models');
+const { CartQuery } = require('../services');
 
 const getCarts = async (req, res) => {
   try {
     const userId = req.currentUser.id;
-    const carts = await Carts.findAll({
-      where: { userId },
-      include: [
-        { model: Users, attributes: ['id', 'username', 'email'] },
-        {
-          model: PriceList,
-          attributes: ['id', 'offerName', 'price', 'discount'],
-          include: [
-            {
-              model: products,
-              attributes: ['id', 'name', 'product_thumbnail'],
-            },
-          ],
-        },
-      ],
-    });
+    
+    const carts = await CartQuery.getAllCartsByUserId(userId);
+    const cartCount = await CartQuery.getCartCountsWhere({ userId });
 
-    const cartCount = await Carts.count({ where: { userId } });
-
-    if (carts.length === 0) {
+    if (!carts.length) {
       return res.status(200).json({
         code: 200,
         message: 'Your carts are empty',
@@ -50,10 +36,7 @@ const addCart = async (req, res) => {
     const { priceListId } = req.body;
     const userId = req.currentUser.id;
 
-    const existingCart = await Carts.findOne({
-      where: { priceListId, userId },
-    });
-
+    const existingCart = await CartQuery.getCartWhere({ priceListId, userId });
     if (existingCart) {
       return res.status(400).json({
         code: 400,
@@ -66,25 +49,7 @@ const addCart = async (req, res) => {
       userId,
     });
 
-    const newCart = await Carts.findOne({
-      where: { id: cart.id },
-      include: [
-        {
-          model: Users,
-          attributes: ['id', 'username', 'email'],
-        },
-        {
-          model: PriceList,
-          attributes: ['id', 'price', 'discount', 'productId'],
-          include: [
-            {
-              model: products,
-              attributes: ['id', 'name'],
-            },
-          ],
-        },
-      ],
-    });
+    const newCart = await CartQuery.getCartWhere({ id: cart.id });
 
     return res.status(201).json({ code: 201, message: 'Cart created successfully', data: newCart });
   } catch (error) {
@@ -100,8 +65,8 @@ const deleteCartbyId = async (req, res) => {
   try {
     const { id } = req.params;
     const userId = req.currentUser.id;
-    const cart = await Carts.findOne({ where: { id, userId } });
 
+    const cart = await CartQuery.getCartWhere({ id, userId });
     if (!cart) {
       return res.status(200).json({
         code: 200,
@@ -110,7 +75,6 @@ const deleteCartbyId = async (req, res) => {
     }
 
     await cart.destroy();
-
     return res.status(200).json({
       code: 200,
       message: 'Cart deleted successfully',
@@ -146,19 +110,8 @@ const deleteAllCarts = async (req, res) => {
 const cartsPayment = async (req, res) => {
   try {
     const userId = req.currentUser.id;
-    
-    const existingCarts = await Carts.findAll({
-      where: {
-        userId,
-      },
-      attributes: ['userId'],
-      include: [
-        {
-          model: PriceList,
-          attributes: ['productId'],
-        },
-      ],
-    });
+
+    const existingCarts = await CartQuery.getAllCartsByUserId(userId);
     if (!existingCarts.length) {
       return res.status(400).json({
         code: 400,

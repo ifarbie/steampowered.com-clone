@@ -1,150 +1,33 @@
-const {
-  products,
-  Category,
-  PriceList,
-  Feature,
-  SysReqs,
-  CategorySysReq,
-  Review,
-  ScrollThumbnail,
-} = require("../models");
+const { ProductQuery } = require('../services');
 
 const getProductDetail = async (req, res) => {
   try {
-    const productData = req.params.id;
-    const data = await products.findOne({
-      attributes: [
-        "id",
-        "name",
-        "short_description",
-        "release_date",
-        "developer",
-        "publisher",
-        "product_thumbnail",
-        "video",
-        "description",
-        "jumbotron_image"
-      ],
-      where: {
-        id: req.params.id,
-      },
-      include: [
-        {
-          model: Category,
-          attributes: ["id", "name"],
-          through: {
-            attributes: [],
-          },
-        },
-        {
-          model: PriceList,
-          attributes: ["id", "price", "discount", "offerName"],
-        },
-        {
-          model: Feature,
-          as: "productFeatures",
-          attributes: ["id", "name", "icon"],
-        },
-        {
-          model: SysReqs,
-          attributes: [
-            "id",
-            "productId",
-            "recommended",
-            "osId",
-            "processor",
-            "memory",
-            "graphics",
-            "directX",
-            "storage",
-          ],
-          include: [
-            {
-              model: CategorySysReq,
-            },
-          ],
-        },
-        {
-          model: Review,
-        },
-        {
-          model: ScrollThumbnail,
-          attributes: ["id", "productId", "img", "type"],
-        },
-      ],
-    });
+    const { id } = req.params;
+
+    const data = await ProductQuery.getProductWhere({ id });
     if (!data) {
-      throw new Error("Data tidak ditemukan");
+      throw new Error('Data tidak ditemukan');
     }
-    if (productData) {
-      return res.status(200).json({
-        code: 200,
-        message: "success",
-        data: data,
-      });
-    }
+
+    return res.status(200).json({
+      code: 200,
+      message: 'success',
+      data,
+    });
   } catch (error) {
     return res.status(404).json({
       code: 404,
-      message: "Page Not Found",
+      message: 'Page Not Found',
       error,
     });
   }
 };
 
 const getAllProduct = async (req, res) => {
-  const data = await products.findAll({
-    include: [
-      {
-        model: Category,
-        attributes: ["id", "name"],
-        through: {
-          attributes: [],
-        },
-      },
-      {
-        model: PriceList,
-        attributes: ["id", "price", "discount"],
-      },
-      {
-        model: Feature,
-        as: "productFeatures",
-        attributes: ["id", "name", "icon"],
-        through: {
-          attributes: [],
-        },
-      },
-      {
-        model: SysReqs,
-        attributes: [
-          "id",
-          "productId",
-          "recommended",
-          "osId",
-          "processor",
-          "memory",
-          "graphics",
-          "directX",
-          "storage",
-        ],
-        include: [
-          {
-            model: CategorySysReq,
-          },
-        ],
-      },
-      {
-        model: Review,
-      },
-      {
-        model: ScrollThumbnail,
-        attributes: ["id", "productId", "img", "type"],
-      },
-    ],
-  });
+  const data = await ProductQuery.getAllProducts();
   return res.status(200).json({
     code: 200,
-    message: "success",
+    message: 'success',
     data: data,
   });
 };

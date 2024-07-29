@@ -8,6 +8,7 @@ const getCategories = async (req, res) => {
 
 const getCategoryById = async (req, res) => {
   const { id } = req.params;
+  
   const category = await CategoryQuery.getCategoryDetailWhere({ id });
 
   return res.status(200).json({ code: 200, category });
