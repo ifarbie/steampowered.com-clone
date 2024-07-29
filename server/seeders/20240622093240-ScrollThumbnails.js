@@ -2,7 +2,7 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up(queryInterface) {
     /**
      * Add seed commands here.
      *
@@ -348,114 +348,114 @@ module.exports = {
           type: "img",
         },
 
-        // Destiny 2
+        // Ghost of tsushima
         {
           img: "",
-          productId: 13,
+          productId: 15,
           type: "img",
         },
         {
           img: "",
-          productId: 13,
+          productId: 15,
           type: "img",
         },
         {
           img: "",
-          productId: 13,
+          productId: 15,
           type: "img",
         },
         {
           img: "",
-          productId: 13,
+          productId: 15,
           type: "img",
         },
         {
           img: "",
-          productId: 13,
+          productId: 15,
           type: "img",
         },
         {
           img: "",
-          productId: 13,
+          productId: 15,
           type: "img",
         },
         {
           img: "",
-          productId: 13,
+          productId: 15,
           type: "img",
         },
 
-        //
+        // destiny 2
         {
           img: "https://cdn.akamai.steamstatic.com/steam/apps/257033482/movie480_vp9.webm?t=1719265609",
-          productId: 14,
+          productId: 13,
           type: "video",
         },
         {
           img: "https://cdn.akamai.steamstatic.com/steam/apps/256877053/movie480_vp9.webm?t=1661325595",
-          productId: 14,
+          productId: 13,
           type: "video",
         },
         {
           img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/ss_74e30840772ce482f971e325a58130e2ba966976.600x338.jpg?t=1720218333",
-          productId: 14,
+          productId: 13,
           type: "img",
         },
         {
           img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/ss_7fcc82f468fcf8278c7ffa95cebf949bfc6845fc.600x338.jpg?t=1720218333",
-          productId: 14,
+          productId: 13,
           type: "img",
         },
         {
           img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/ss_c142f5078ace9f5e2eb2c80aa3bf768e156b4ee9.600x338.jpg?t=1720218333",
-          productId: 14,
+          productId: 13,
           type: "img",
         },
         {
           img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/ss_a9642404e586be28f856e8f02d038828f691a5ba.600x338.jpg?t=1720218333",
-          productId: 14,
+          productId: 13,
           type: "img",
         },
         {
           img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1085660/ss_01fdd090ed1dd70112ce2c6d6fc208df0a008ac7.600x338.jpg?t=1720218333",
-          productId: 14,
+          productId: 13,
           type: "img",
         },
 
         // Hunt: Showdown
         {
           img: "https://cdn.akamai.steamstatic.com/steam/apps/256893785/movie480_vp9.webm?t=1656430960",
-          productId: 15,
+          productId: 14,
           type: "video",
         },
         {
           img: "https://cdn.akamai.steamstatic.com/steam/apps/256938447/movie480_vp9.webm?t=1700471533",
-          productId: 15,
+          productId: 14,
           type: "video",
         },
         {
           img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594650/ss_ecccaab1143081ca96d8bf00d8b1c4d3d3291e64.600x338.jpg?t=1719844589",
-          productId: 15,
+          productId: 14,
           type: "img",
         },
         {
           img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594650/ss_36f6d959f75d1cca48c2a98d892d2697f6d4bde6.600x338.jpg?t=1719844589",
-          productId: 15,
+          productId: 14,
           type: "img",
         },
         {
           img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594650/ss_021db5b59b2108a69fa710164b97e58cfaada03c.600x338.jpg?t=1719844589",
-          productId: 15,
+          productId: 14,
           type: "img",
         },
         {
           img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594650/ss_4697d48347130eaf48e03e92556252f6b8744428.600x338.jpg?t=1719844589",
-          productId: 15,
+          productId: 14,
           type: "img",
         },
         {
           img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594650/ss_5d14f045ac48f8aa8ccd643a1db7e83a0c384fba.600x338.jpg?t=1719844589",
-          productId: 15,
+          productId: 14,
           type: "img",
         },
 
@@ -645,7 +645,7 @@ module.exports = {
     );
   },
 
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     /**
      * Add commands to revert seed here.
      *
