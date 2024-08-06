@@ -31,8 +31,8 @@ const ProductDetailsPage = () => {
     <div className='bg-steamBg'>
       <Header />
       <CartAndNavbar />
-      <div className='lg:px-4 lg:mt-5'>
-        <main className='bg-steamBg text-headerFontColor max-w-[1100px] mx-auto mb-16'>
+      <div className='lg:px-4'>
+        <main className='bg-steamBg text-headerFontColor max-w-[1100px] mx-auto mb-16 md:pt-6 '>
           <ProdDetailHeader product={product} />
           <ProdDetailBody product={product} />
         </main>

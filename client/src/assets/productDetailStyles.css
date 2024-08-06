@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 
-#headerBg {
+.gradient-header {
   background: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 100%);
 }
 
@@ -158,10 +158,6 @@ td:nth-child(3) {
 
   #wrapper {
     display: inline-block;
-  }
-
-  #directory {
-    display: none;
   }
 }
 
