@@ -113,7 +113,14 @@ const CartPage = () => {
                             </div>
                             <div className='price_container'>
                               <span className='games_price'>
-                                {cart.PriceList.discount > 0 && <div className='price'>{formatPrice(parseInt(discountedPrice(cart.PriceList.discount, cart.PriceList.price)))}</div>}
+                                {cart.PriceList.discount > 0 && (
+                                  <>
+                                    <div className='px-1 py-0.5 text-discount bg-[#4c6b22]'>
+                                      <span>{cart.PriceList.discount}%</span>
+                                    </div>
+                                    <div className='price'>{formatPrice(parseInt(discountedPrice(cart.PriceList.discount, cart.PriceList.price)))}</div>
+                                  </>
+                                )}
                                 <div className={`price ${cart.PriceList.discount > 0 ? 'line-through' : ''}`}>{formatPrice(parseInt(cart.PriceList.price))}</div>
                               </span>
                             </div>
