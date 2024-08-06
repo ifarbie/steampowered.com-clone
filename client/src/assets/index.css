@@ -5,6 +5,9 @@
 body .swiper-slide {
   margin-bottom: 2.3rem;
 }
+body .product-detail-thumbnail .swiper-slide {
+  margin-bottom: 0.7rem;
+}
 
 body .swiper-button-prev,
 body .swiper-button-next {

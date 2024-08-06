@@ -9,20 +9,7 @@
 }
 
 #headerBg {
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0) 50%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
-}
-
-#gameName a button:hover,
-.genreTag span:hover {
-  background: linear-gradient(
-    to right,
-    rgb(169, 245, 255) 50%,
-    rgb(192, 250, 255) 100%
-  );
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 100%);
 }
 
 .prodFeat,
@@ -32,19 +19,11 @@
 .pointShop,
 .gameAchievement,
 #recommendationReasons {
-  background: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.612) 2%,
-    rgba(13, 9, 62, 0.179) 100%
-  );
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.612) 2%, rgba(13, 9, 62, 0.179) 100%);
 }
 
 .sysReqTabs {
-  background: linear-gradient(
-    to right,
-    rgba(58, 110, 139, 0.2) 0%,
-    rgba(58, 110, 139, 0) 100%
-  );
+  background: linear-gradient(to right, rgba(58, 110, 139, 0.2) 0%, rgba(58, 110, 139, 0) 100%);
 }
 
 td {
@@ -64,21 +43,13 @@ td:nth-child(3) {
 #block {
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.612) 2%,
-    rgba(13, 9, 62, 0.179) 100%
-  );
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.612) 2%, rgba(13, 9, 62, 0.179) 100%);
 }
 
 .gameAwards {
   margin-top: 1rem;
   padding: 1rem;
-  background: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.612) 2%,
-    rgba(13, 9, 62, 0.179) 100%
-  );
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.612) 2%, rgba(13, 9, 62, 0.179) 100%);
 }
 
 .gameAwardsBannerBG {
@@ -89,8 +60,7 @@ td:nth-child(3) {
   margin-bottom: 20px;
   display: block;
   text-transform: uppercase;
-  background: url(https://cdn.cloudflare.steamstatic.com/store/promo/steamawards2020/StoreBanner-plain2020.jpg)
-    no-repeat;
+  background: url(https://cdn.cloudflare.steamstatic.com/store/promo/steamawards2020/StoreBanner-plain2020.jpg) no-repeat;
   background-size: cover;
 }
 
@@ -129,11 +99,7 @@ td:nth-child(3) {
 }
 
 .card {
-  background: linear-gradient(
-    -60deg,
-    rgba(226, 244, 255, 0.3) 5%,
-    rgba(84, 107, 115, 0.3) 95%
-  );
+  background: linear-gradient(-60deg, rgba(226, 244, 255, 0.3) 5%, rgba(84, 107, 115, 0.3) 95%);
 }
 
 .bundleInfo {
@@ -141,11 +107,7 @@ td:nth-child(3) {
 }
 
 .disclaimer {
-  background: linear-gradient(
-    -60deg,
-    rgba(226, 244, 255, 0.2) 0%,
-    rgba(97, 100, 101, 0.2) 100%
-  );
+  background: linear-gradient(-60deg, rgba(226, 244, 255, 0.2) 0%, rgba(97, 100, 101, 0.2) 100%);
 }
 
 .contentHeader,
@@ -158,11 +120,7 @@ td:nth-child(3) {
 }
 
 .content {
-  background: linear-gradient(
-    135deg,
-    rgba(97, 100, 101, 0.3) 0%,
-    rgba(226, 244, 255, 0.3) 100%
-  );
+  background: linear-gradient(135deg, rgba(97, 100, 101, 0.3) 0%, rgba(226, 244, 255, 0.3) 100%);
 }
 
 .moreButton p {
@@ -177,20 +135,6 @@ td:nth-child(3) {
   #container {
     padding: 1rem;
   }
-
-  #headerBg {
-    display: inline-block;
-  }
-
-  #sideDesc {
-    margin: 0;
-  }
-}
-
-@media (min-width: 426px) {
-  .mobileH1 {
-    display: none;
-  }
 }
 
 @media (max-width: 321px) {
@@ -198,17 +142,8 @@ td:nth-child(3) {
     padding: 1rem;
   }
 
-  #wrapper,
-  #headerBg {
+  #wrapper {
     display: inline-block;
-  }
-
-  #sideDesc {
-    margin: 0;
-  }
-
-  #gameName a button {
-    display: none;
   }
 
   .bundleInfo {
@@ -221,21 +156,8 @@ td:nth-child(3) {
     padding: 1rem;
   }
 
-  #wrapper,
-  #headerBg {
+  #wrapper {
     display: inline-block;
-  }
-
-  #sideDesc {
-    margin: 0;
-  }
-
-  #gameName a button {
-    display: none;
-  }
-
-  #gameName h1 {
-    display: none;
   }
 
   #directory {
@@ -245,4 +167,11 @@ td:nth-child(3) {
 
 .border-white {
   border: 2px solid white;
+}
+
+
+.product-detail-tag:hover {
+  background: linear-gradient(135deg,  #67c1f5 0%,#417a9b 100%);
+  color: #ffffff;
+  cursor: pointer;
 }
