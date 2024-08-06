@@ -1,5 +1,5 @@
-import ProdDetailBody from './ProductDetailComponent/ProdDetailBody';
-import ProdDetailHeader from './ProductDetailComponent/ProdDetailHeader';
+import ProdDetailBody from './components/ProdDetailBody';
+import ProdDetailHeader from './components/ProdDetailHeader';
 import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../../elements/Header/Header';
 import CartAndNavbar from '../../elements/CartAndNavbar/CartAndNavbar';

@@ -33,20 +33,21 @@ const ProdDetailHeader = ({ product }) => {
     <>
       {/* product detail directory */}
       <div id='directory' className='text-fontColor text-sm'>
-        <p className='lowercase'>
-          {product?.Categories?.map((category, index) => {
-            return <span key={index}>{category.name} &gt; </span>;
-          })}
-          {product?.name}
+        <p className='capitalize'>
+          <span>All Games &gt; </span>
+          <span>{product?.Categories?.[0].name} &gt; </span>
+          <span>{product?.name}</span>
         </p>
       </div>
+
       {/* game title */}
       <div id='gameName' className='flex justify-between'>
-        <h1 className='text-3xl mb-4'>{product.name}</h1>
+        <h1 className='text-3xl mb-4 text-white'>{product.name}</h1>
         <a href='#'>
           <button className='bg-buttonColorBg text-buttonColor pt-2 pr-4 pb-2 pl-4 rounded-sm'>Community Hub</button>
         </a>
       </div>
+
       {/* product detail side desc */}
       <div id='headerBg' className='flex flex-row-reverse pb-4 max-w-full max-h-full'>
         <div id='sideDesc' className='ml-4 min-w-60 w-screen max-w-full max-h-full'>
@@ -125,6 +126,8 @@ const ProdDetailHeader = ({ product }) => {
           </div>
         </div>
       </div>
+
+
       {/* sign in question */}
       <div id='question' className='bg-greyBg text-sm p-3'>
         <p>
