@@ -1,5 +1,4 @@
 import { SwiperSlide } from 'swiper/react';
-// import { categories } from '@/utils/datas';
 import { useSelector } from 'react-redux';
 import RecommendedJumbotron from '../RecommendedJumbotron';
 import GameCard from '../GameCard';
@@ -10,7 +9,7 @@ import SignInBox from '../SignInBox';
 import { useGetProductsByCategory } from '@/hooks/api/useGetProductsByCategory';
 import { useGetProducts } from '@/hooks/api/useGetProducts';
 import SpecialGameCard from '../SpecialGameCard';
-import { useGetCategories } from '../../../../../hooks/api/useGetCategories';
+import { useGetCategories } from '@/hooks/api/useGetCategories';
 
 const breakpoints = {
   0: {

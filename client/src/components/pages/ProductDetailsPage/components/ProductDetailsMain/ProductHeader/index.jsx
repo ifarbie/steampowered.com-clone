@@ -38,7 +38,6 @@ const ProductHeader = ({ product }) => {
     }
   }, [product]);
 
-
   return (
     <>
       <ProductHeaderTitle product={product} />
@@ -50,7 +49,7 @@ const ProductHeader = ({ product }) => {
               <img src={product.product_thumbnail} alt='header' className='w-full' />
             </div>
             {/* md:hidden */}
-            <div className='px-2 space-y-3 pt-3 pb-4 md:hidden'>
+            <div className='px-3 space-y-3 pt-3 pb-4 md:hidden'>
               <div className='text-2xl text-white font-semibold'>
                 <h2>{product.name}</h2>
               </div>
@@ -61,8 +60,8 @@ const ProductHeader = ({ product }) => {
                   <p>Released</p>
                 </div>
                 <div className='text-buttonColor flex flex-col'>
-                  <span>{product.developer}</span>
-                  <span>{product.publisher}</span>
+                  <span className='cursor-pointer hover:text-white'>{product.developer}</span>
+                  <span className='cursor-pointer hover:text-white'>{product.publisher}</span>
                   <span className='text-[#c6d4df]'>{formatDate(product.release_date)}</span>
                 </div>
               </div>
@@ -75,11 +74,11 @@ const ProductHeader = ({ product }) => {
                 </div>
                 <div className='capitalize'>
                   {product?.Categories?.map((category, index) => (
-                    <span key={index} className='product-detail-tag text-[14px] text-buttonColor bg-[#1B2838] rounded py-1 px-3 mr-1 font-light'>
+                    <span key={index} className='product-detail-button text-[14px] text-buttonColor bg-[#1B2838] rounded py-1 px-3 mr-1 font-light'>
                       {category.name}
                     </span>
                   ))}
-                  <span className='product-detail-tag text-[14px] text-buttonColor bg-[#1B2838] rounded py-1 px-3 mr-1 font-light'>+</span>
+                  <span className='product-detail-button text-[14px] text-buttonColor bg-[#1B2838] rounded py-1 px-3 mr-1 font-light'>+</span>
                 </div>
               </div>
               <div className='text-[#8A97A0] '>
@@ -135,8 +134,8 @@ const ProductHeader = ({ product }) => {
                       <div>{formatDate(product.release_date)}</div>
                     </div>
                     <div>
-                      <div>{product.developer}</div>
-                      <div>{product.publisher}</div>
+                      <div className='cursor-pointer hover:text-white'>{product.developer}</div>
+                      <div className='cursor-pointer hover:text-white'>{product.publisher}</div>
                     </div>
                   </div>
                 </div>
@@ -148,11 +147,11 @@ const ProductHeader = ({ product }) => {
                 </div>
                 <div className='capitalize'>
                   {product?.Categories?.map((category, index) => (
-                    <span key={index} className='product-detail-tag text-xs text-[#67c1f5] bg-buttonColorBg rounded-sm py-1 px-2 mr-1 font-light'>
+                    <span key={index} className='product-detail-button text-xs text-[#67c1f5] bg-buttonColorBg rounded-sm py-1 px-2 mr-1 font-light'>
                       {category.name}
                     </span>
                   ))}
-                  <span className='product-detail-tag text-xs text-[#67c1f5] bg-buttonColorBg rounded-sm py-1 px-2 mr-1 font-light'>+</span>
+                  <span className='product-detail-button text-xs text-[#67c1f5] bg-buttonColorBg rounded-sm py-1 px-2 mr-1 font-light'>+</span>
                 </div>
               </div>
             </div>
@@ -164,34 +163,39 @@ const ProductHeader = ({ product }) => {
             </div>
             <div>
               {product?.Categories?.map((category, index) => (
-                <span key={index} className='product-detail-tag text-xs text-[#67c1f5] bg-buttonColorBg rounded-sm py-1 px-2 mr-1 capitalize font-light'>
+                <span key={index} className='product-detail-button text-xs text-[#67c1f5] bg-buttonColorBg rounded-sm py-1 px-2 mr-1 capitalize font-light'>
                   {category.name}
                 </span>
               ))}
-              <span className='product-detail-tag text-xs text-[#67c1f5] bg-buttonColorBg rounded-sm py-1 px-2 mr-1 capitalize font-light'>+</span>
+              <span className='product-detail-button text-xs text-[#67c1f5] bg-buttonColorBg rounded-sm py-1 px-2 mr-1 capitalize font-light'>+</span>
             </div>
           </div>
         </div>
 
         {/* thumbnail, video, etc. */}
-        <div className='bg-[#121a24] product-detail-thumbnail md:bg-gradient-to-r md:from-[#1b2838] md:to-[#121a24] lg:from-transparent lg:to-transparent lg:bg-transparent overflow-hidden'>
+        <div className='overflow-hidden bg-[#121a24] product-detail-thumbnail px-3 md:bg-gradient-to-r md:from-[#1b2838] md:to-[#121a24] lg:from-transparent lg:to-transparent lg:bg-transparent md:px-0'>
           {mainContent.type === 'video' ? <video controls src={mainContent.src} type='video/mp4' className='w-full mb-1'></video> : <img src={mainContent.src} alt='Main Preview' className='w-full mb-1' />}
           {/* <div className='mt-1 w-full'> */}
           <Swiper modules={[Navigation, Pagination, Scrollbar]} slidesPerView={4} spaceBetween={4} scrollbar={{ draggable: true }} breakpoints={breakpoints}>
             {product?.ScrollThumbnails?.map((thumbnail, index) => (
               <SwiperSlide key={index}>
                 {thumbnail.type === 'video' ? (
-                  <video src={thumbnail.img} type={thumbnail.type} className={`${activeSlide === index ? 'border-white border-2' : ''}`} onClick={() => handleThumbnailClick(thumbnail.img, 'video', index)}></video>
+                  <video src={thumbnail.img} type={thumbnail.type} className={`cursor-pointer ${activeSlide === index ? 'border-white border-2' : ''}`} onClick={() => handleThumbnailClick(thumbnail.img, 'video', index)}></video>
                 ) : (
-                  <img src={thumbnail.img} type={thumbnail.type} alt={`Screenshot ${index + 1}`} className={`${activeSlide === index ? 'border-white border-2' : ''}`} onClick={() => handleThumbnailClick(thumbnail.img, 'image', index)} />
+                  <img
+                    src={thumbnail.img}
+                    type={thumbnail.type}
+                    alt={`Screenshot ${index + 1}`}
+                    className={`cursor-pointer ${activeSlide === index ? 'border-white border-2' : ''}`}
+                    onClick={() => handleThumbnailClick(thumbnail.img, 'image', index)}
+                  />
                 )}
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* </div> */}
           <div className={`p-3 ${isLogin ? 'hidden' : 'block lg:hidden'}`}>
             <p className='text-sm'>
-              <Link to={`/login`} className='text-white'>
+              <Link to={`/login`} className='text-white hover:text-buttonColor'>
                 Sign in{' '}
               </Link>
               to add this item to your cart
@@ -200,9 +204,9 @@ const ProductHeader = ({ product }) => {
         </div>
       </div>
 
-      <div className={`bg-black/20 p-3 ${isLogin ? 'hidden' : 'hidden lg:block'}`}>
+      <div className={`bg-black/20 py-3 px-4 ${isLogin ? 'hidden' : 'hidden lg:block'}`}>
         <p className='text-sm'>
-          <Link to={`/login`} className='text-white'>
+          <Link to={`/login`} className='text-white hover:text-buttonColor'>
             Sign in{' '}
           </Link>
           to add this item to your cart
