@@ -1,17 +1,15 @@
 /* eslint-disable react/prop-types */
 import { useSelector } from 'react-redux';
-import { addToCart } from '../../../../API/cart';
-import { discountedPrice, formatPrice } from '../../../../utils/functions';
+import { addToCart } from '@/API/cart';
+import { discountedPrice, formatPrice } from '@/utils/functions';
 
-const ProdDetailOffers = ({ product }) => {
+const ProductOffers = ({ product }) => {
   const isLogin = useSelector((state) => state.auth.isLogin);
   const user = useSelector((state) => state.auth.user);
   const productOwned = user?.productOwned;
-  const isOwned = productOwned?.find(owned => owned.id === product?.id );
+  const isOwned = productOwned?.find((owned) => owned.id === product?.id);
 
   const PriceList = product?.PriceLists;
-  // console.log(product);
-  // console.log(productOwned)
 
   const handleAddToCart = async (offerIndex, productName, offerName) => {
     try {
@@ -49,7 +47,7 @@ const ProdDetailOffers = ({ product }) => {
               <span>{formatPrice(offer?.price)}</span>
             )}
             <button className='m-1 bg-buyBg py-2 px-4 rounded' onClick={() => handleAddToCart(offer.id, product.name, offer.offerName)} disabled={isOwned}>
-              {isOwned ? "Already Owned" : "Add to Cart"}
+              {isOwned ? 'Already Owned' : 'Add to Cart'}
             </button>
           </span>
         </div>
@@ -60,4 +58,4 @@ const ProdDetailOffers = ({ product }) => {
   return <>{offersElements}</>;
 };
 
-export default ProdDetailOffers;
+export default ProductOffers;

@@ -5,8 +5,14 @@
 body .swiper-slide {
   margin-bottom: 2.3rem;
 }
+
 body .product-detail-thumbnail .swiper-slide {
   margin-bottom: 0.7rem;
+}
+
+body .product-detail-thumbnail .swiper {
+  width: 100%;
+  height: auto;
 }
 
 body .swiper-button-prev,

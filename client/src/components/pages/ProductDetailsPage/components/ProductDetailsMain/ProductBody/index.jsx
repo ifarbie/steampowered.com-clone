@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
-import steamDataSet from './steamDataset';
-import ProdDetailOffers from './ProdDetailOffers';
-import { formatDate } from '../../../../utils/functions';
+import steamDataSet from '../../steamDataset';
+import ProdDetailOffers from './ProductOffers';
+import { formatDate } from '@/utils/functions';
 
-const ProdDetailBody = ({ product }) => {
+const ProductBody = ({ product }) => {
   const { id } = useParams();
   const gameData = steamDataSet[id];
 
@@ -438,4 +438,4 @@ const ProdDetailBody = ({ product }) => {
     </div>
   );
 };
-export default ProdDetailBody;
+export default ProductBody;
