@@ -73,8 +73,8 @@ const CartPage = () => {
   return (
     <div className='lg:flex lg:flex-col lg:justify-between lg:min-h-screen bg-[#1b2838]'>
       <Header />
+      <CartAndNavbar cartCount={carts.length} />
       <main>
-        <CartAndNavbar cartCount={carts.length} />
         <div className='container_content'>
           <div className='breadcrumb_container'>
             <a href='#'>

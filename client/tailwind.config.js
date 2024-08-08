@@ -10,7 +10,7 @@ export default {
         cards: 'repeat(4, minmax(240px, 1fr))',
       },
       screens: {
-        lgNewRelease: { 'max': '1080px' },
+        lgMax: { 'max': '1024px' },
         smFooter: { 'max': '768px' }
       },
       colors: {
