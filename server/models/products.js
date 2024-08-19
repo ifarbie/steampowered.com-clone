@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       products.belongsToMany(models.Category, { through: "BridgeProductCategory" });
       products.belongsToMany(models.Users, { through: "BridgeProductOwned", as: "productOwned" });
       products.belongsToMany(models.Feature, { through: "BridgeProductFeatures", as: "productFeatures" });
-      products.hasOne(models.SysReqs);
+      products.hasMany(models.SysReqs);
       products.hasMany(models.PriceList);
       products.hasMany(models.Review);
     }

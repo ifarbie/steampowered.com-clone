@@ -20,10 +20,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.INTEGER,
     },
-    recommended: {
-      allowNull: false,
-      type: DataTypes.STRING, 
-    },
     osId: {
       allowNull: false,
       type: DataTypes.INTEGER,
@@ -31,6 +27,14 @@ module.exports = (sequelize, DataTypes) => {
         model: "CategorySysReq",
         key: "id",
       },
+    },
+    os: {
+      allowNull: false,
+      type: DataTypes.STRING
+    },
+    recommended: {
+      allowNull: false,
+      type: DataTypes.STRING, 
     },
     processor: {
       allowNull: false,
