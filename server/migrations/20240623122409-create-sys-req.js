@@ -19,10 +19,6 @@ module.exports = {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE',
       },
-      recommended: {
-        allowNull: false,
-        type: Sequelize.BOOLEAN
-      },
       osId: {
         allowNull: false,
         type: Sequelize.INTEGER,
@@ -32,6 +28,14 @@ module.exports = {
         },
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE',
+      },
+      os: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
+      recommended: {
+        allowNull: true,
+        type: Sequelize.BOOLEAN
       },
       processor: {
         allowNull: false,
@@ -53,19 +57,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
-      }
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('SysReqs');
   }
 };

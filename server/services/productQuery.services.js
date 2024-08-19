@@ -25,7 +25,7 @@ const getProductWhere = async (columnObject) => {
       },
       {
         model: SysReqs,
-        attributes: ['id', 'productId', 'recommended', 'osId', 'processor', 'memory', 'graphics', 'directX', 'storage'],
+        attributes: ['id', 'productId', 'recommended', 'osId', 'processor', 'memory', 'graphics', 'directX', 'storage', 'os'],
         include: [
           {
             model: CategorySysReq,

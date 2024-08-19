@@ -51,7 +51,7 @@ const ProductHeader = ({ product }) => {
             {/* md:hidden */}
             <div className='px-3 space-y-3 pt-3 pb-4 md:hidden'>
               <div className='text-2xl text-white font-semibold'>
-                <h2>{product.name}</h2>
+                <h2>{product?.name}</h2>
               </div>
               <div className='flex text-[13px]'>
                 <div className='flex-col text-[#8A97A0] mr-2'>
@@ -75,7 +75,7 @@ const ProductHeader = ({ product }) => {
                 <div className='capitalize'>
                   {product?.Categories?.map((category, index) => (
                     <span key={index} className='product-detail-button text-[14px] text-buttonColor bg-[#1B2838] rounded py-1 px-3 mr-1 font-light'>
-                      {category.name}
+                      {category?.name}
                     </span>
                   ))}
                   <span className='product-detail-button text-[14px] text-buttonColor bg-[#1B2838] rounded py-1 px-3 mr-1 font-light'>+</span>
@@ -148,7 +148,7 @@ const ProductHeader = ({ product }) => {
                 <div className='capitalize'>
                   {product?.Categories?.map((category, index) => (
                     <span key={index} className='product-detail-button text-xs text-[#67c1f5] bg-buttonColorBg rounded-sm py-1 px-2 mr-1 font-light'>
-                      {category.name}
+                      {category?.name}
                     </span>
                   ))}
                   <span className='product-detail-button text-xs text-[#67c1f5] bg-buttonColorBg rounded-sm py-1 px-2 mr-1 font-light'>+</span>
@@ -164,7 +164,7 @@ const ProductHeader = ({ product }) => {
             <div>
               {product?.Categories?.map((category, index) => (
                 <span key={index} className='product-detail-button text-xs text-[#67c1f5] bg-buttonColorBg rounded-sm py-1 px-2 mr-1 capitalize font-light'>
-                  {category.name}
+                  {category?.name}
                 </span>
               ))}
               <span className='product-detail-button text-xs text-[#67c1f5] bg-buttonColorBg rounded-sm py-1 px-2 mr-1 capitalize font-light'>+</span>
